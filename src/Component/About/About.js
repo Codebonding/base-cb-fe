@@ -1,6 +1,6 @@
 import React from 'react';
-import vision from '/IDC/cb/base-cb-fe/src/assest/image/vision.jpg';
-import why from '/IDC/cb/base-cb-fe/src/assest/image/why.jpg';
+import vision from '../../assest/image/vision.jpg';
+import why from '../../assest/image/why.jpg';
 
 const About = () => {
   return (

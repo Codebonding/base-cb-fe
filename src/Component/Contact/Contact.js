@@ -1,5 +1,4 @@
 import React from 'react';
-import master from '/IDC/cb/base-cb-fe/src/assest/image/matser.jpg';
 
 const Contact = () => {
   return (

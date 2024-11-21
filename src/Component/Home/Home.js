@@ -1,8 +1,8 @@
 import React from 'react';
-import master from '/IDC/cb/base-cb-fe/src/assest/image/matser.jpg';
-import web from '/IDC/cb/base-cb-fe/src/assest/image/web.jpg';
-import full from '/IDC/cb/base-cb-fe/src/assest/image/full.jpg';
-import git from '/IDC/cb/base-cb-fe/src/assest/image/git.png';
+import master from '../../assest/image/matser.jpg';
+import web from '../../assest/image/web.jpg';
+import full from '../../assest/image/full.jpg';
+import git from '../../assest/image/git.png';
 
 const Home = () => {
   return (
