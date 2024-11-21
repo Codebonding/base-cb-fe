@@ -18,5 +18,207 @@ code {
     monospace;
 }
 
+/* General Walkthrough Container */
+.walkthrough {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Walkthrough Body Section */
+.walkthrough-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* Screen Content */
+.screen {
+  text-align: center;
+  margin: 0 20px;
+}
+
+.screen h3 {
+  font-size: 24px;
+  color: #333;
+  margin: 15px 0;
+}
+
+.screen p {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Navigation Buttons */
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  color: #0056b3;
+}
+
+/* Footer Section */
+.walkthrough-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.walkthrough-footer .button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.walkthrough-footer .button.finish {
+  background-color: #28a745;
+}
+
+.walkthrough-footer .button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.walkthrough-footer .button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Media Content */
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.media img {
+  max-width: 100%;
+  max-height: 150px;
+  margin: 0 10px;
+}
+
+/* Logo Styling */
+.media.logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* Books Icon */
+.media.books img {
+  width: 80px;
+  height: auto;
+}
+
+/* Bars Icon */
+.media.bars img {
+  width: 60px;
+  height: auto;
+}
+
+/* Files Icon */
+.media.files img {
+  width: 70px;
+  height: auto;
+}
+
+/* .hello{
+  padding-top: ;
+  height: 500px;
+} */
+/* Gallery CSS */
+.gallery {
+  --s: 250px; /* the size */
+  
+  display: grid;
+  transform-style: preserve-3d;
+  --_p: perspective(calc(5.5*var(--s)));
+  animation: r 9s infinite cubic-bezier(.5,-0.5,.5,1.5);
+}
+
+.gallery img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: var(--_t,) translateZ(calc(var(--s)/2));
+}
+
+.gallery img:nth-child(2) {
+  --_t: rotateX(-90deg);
+}
+
+.gallery img:nth-child(3) {
+  --_t: rotateY(90deg);
+}
+
+.gallery img:nth-child(4) {
+  --_t: rotateX(180deg) rotate(90deg);
+}
+
+.gallery img:nth-child(5) {
+  --_t: rotateX(90deg);
+}
+
+.gallery img:nth-child(6) {
+  --_t: rotateY(-90deg);
+}
+
+@keyframes r {
+  0%,3%   {transform: var(--_p) rotate3d(0, 0, 0, 0deg);}
+  14%,19% {transform: var(--_p) rotate3d(-1, 1, 0, 180deg);}
+  31%,36% {transform: var(--_p) rotate3d(0, -1, 0, 90deg);}
+  47%,52% {transform: var(--_p) rotate3d(1, 0, 0, 90deg);}
+  64%,69% {transform: var(--_p) rotate3d(1, 0, 0, -90deg);}
+  81%,86% {transform: var(--_p) rotate3d(0, 1, 0, 90deg);}
+  97%,100%{transform: var(--_p) rotate3d(0, 0, 0, 0deg);}
+}
+
+.split {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #556270;
+  animation: b 9s infinite;
+}
+
+@keyframes b {
+  0%,3%   {background: #774F38;}
+  14%,19% {background: #C5E0DC;}
+  31%,36% {background: #036564;}
+  45%,55% {background: #B38184;}
+  64%,69% {background: #424254;}
+  64%,68% {background: #4DBCE9;}
+  65%,to  {background: #774F38;}
+}
+
+
+
 
 
