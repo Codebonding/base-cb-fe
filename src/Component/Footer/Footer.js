@@ -1,54 +1,52 @@
-// src/components/Footer.js
-import { Facebook, Twitter, Linkedin, Instagram } from '@styled-icons/bootstrap';
+import React from 'react';
+import { footerData } from '../../constant';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-6">
-      <div className="container mx-auto text-center">
-        <p className="text-sm mb-4">© 2024 My React App. All rights reserved.</p>
-        <p>Powered By Codebonding</p>
+    <footer className="bg-gray-800 text-white py-12 mt-12 rounded-t-lg shadow-lg">
+      <div className="container mx-auto px-6 md:px-16">
+        {/* Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+          {/* Logo/Brand Section */}
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-300 mb-4">{footerData.brand.name}</h2>
+            <p className="text-gray-400 text-sm">{footerData.brand.description}</p>
+          </div>
 
-        {/* Social Media Links */}
-        <div className="mt-4">
-          {/* Facebook Icon */}
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-2 text-xl hover:text-blue-600 transition-colors"
-          >
-            <Facebook className="w-6 h-6 text-white hover:text-blue-600" />
-          </a>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-300 mb-4">Quick Links</h3>
+            <ul className="text-gray-400 space-y-2">
+              {footerData.quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="hover:text-blue-400">{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Twitter Icon */}
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-2 text-xl hover:text-blue-400 transition-colors"
-          >
-            <Twitter className="w-6 h-6 text-white hover:text-blue-400" />
-          </a>
+          {/* Social Media Links */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-300 mb-4">Follow Us</h3>
+            <div className="flex justify-center md:justify-start space-x-4">
+              {footerData.socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-gray-400 ${social.hoverColor}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
 
-          {/* LinkedIn Icon */}
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-2 text-xl hover:text-blue-700 transition-colors"
-          >
-            <Linkedin className="w-6 h-6 text-white hover:text-blue-700" />
-          </a>
-
-          {/* Instagram Icon */}
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mx-2 text-xl hover:text-pink-600 transition-colors"
-          >
-            <Instagram className="w-6 h-6 text-white hover:text-pink-600" />
-          </a>
+        {/* Bottom Section */}
+        <div className="mt-12 text-center">
+          <p className="text-sm text-gray-400">{footerData.bottomText}</p>
         </div>
       </div>
     </footer>

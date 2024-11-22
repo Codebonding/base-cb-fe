@@ -1,81 +1,70 @@
 import React from 'react';
-import vision from '../../assest/image/vision.jpg';
-import why from '../../assest/image/why.jpg';
+import { aboutInfo } from '../../constant';
 
 const About = () => {
   return (
-    <div className="bg-gray-100 py-16">
+    <div className="bg-gradient-to-r from-blue-50 via-white to-blue-100 py-16">
       <div className="container mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-gray-800 mb-4">About Us</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover our mission to empower developers through cutting-edge training programs, fostering innovation, and enabling successful careers in tech.
-          </p>
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold text-gray-800 mb-4">{aboutInfo.header.title}</h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">{aboutInfo.header.description}</p>
         </div>
 
-        {/* Main Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Main Section: Vision */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
           {/* Left Side - Content */}
-          <div>
-            <h2 className="text-4xl font-bold text-blue-600 mb-6">
-              Our Vision
-            </h2>
-            <p className="text-gray-700 text-lg mb-6">
-              We believe in transforming passionate learners into skilled professionals. By offering a structured approach to web development, we ensure that our students are equipped to meet industry demands confidently.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600 mb-6">
-              <li>Hands-on learning experience.</li>
-              <li>Expert mentors with real-world knowledge.</li>
-              <li>Access to a supportive tech community.</li>
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold text-blue-700 mb-4">{aboutInfo.visionSection.title}</h2>
+            <p className="text-lg text-gray-700">{aboutInfo.visionSection.description}</p>
+            <ul className="list-disc pl-6 space-y-4 text-gray-600">
+              {aboutInfo.visionSection.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-md shadow-md hover:bg-blue-700 transition">
-              Learn More
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-md shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform">
+              {aboutInfo.visionSection.buttonText}
             </button>
           </div>
 
           {/* Right Side - Image */}
-          <div className="relative">
+          <div className="relative overflow-hidden rounded-lg shadow-xl transform hover:scale-105 transition duration-500 ease-in-out">
             <img
-              src={vision}
-              alt="About Us"
-              className="rounded-lg shadow-lg"
+              src={aboutInfo.visionSection.image}
+              alt={aboutInfo.visionSection.imageAlt}
+              className="object-cover w-full h-full"
             />
-            <div className="absolute top-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-md shadow-md">
-              <span className="text-sm font-medium">Empowering Developers</span>
+            <div className="absolute top-4 left-4 bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-md shadow-md opacity-90">
+              {aboutInfo.visionSection.imageCaption}
             </div>
           </div>
         </div>
 
-        {/* Secondary Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16 items-center">
+        {/* Secondary Section: Why Choose Us */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Image */}
-          <div className="relative">
+          <div className="relative overflow-hidden rounded-lg shadow-xl transform hover:scale-105 transition duration-500 ease-in-out">
             <img
-              src={why}
-              alt="Our Approach"
-              className="rounded-lg shadow-lg"
+              src={aboutInfo.whySection.image}
+              alt={aboutInfo.whySection.imageAlt}
+              className="object-cover w-full h-full"
             />
-            <div className="absolute bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-md shadow-md">
-              <span className="text-sm font-medium">Building the Future</span>
+            <div className="absolute bottom-4 right-4 bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-md shadow-md opacity-90">
+              {aboutInfo.whySection.imageCaption}
             </div>
           </div>
 
           {/* Right Side - Content */}
-          <div>
-            <h2 className="text-4xl font-bold text-blue-600 mb-6">
-              Why Choose Us?
-            </h2>
-            <p className="text-gray-700 text-lg mb-6">
-              Our unique approach combines theoretical knowledge with practical applications, ensuring students graduate with the confidence and expertise needed to excel in their careers.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600 mb-6">
-              <li>Comprehensive curriculum with modern technologies.</li>
-              <li>Real-world projects to enhance skills.</li>
-              <li>Focus on career readiness and growth.</li>
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold text-blue-700 mb-4">{aboutInfo.whySection.title}</h2>
+            <p className="text-lg text-gray-700">{aboutInfo.whySection.description}</p>
+            <ul className="list-disc pl-6 space-y-4 text-gray-600">
+              {aboutInfo.whySection.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-md shadow-md hover:bg-blue-700 transition">
-              Join Our Program
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-md shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform">
+              {aboutInfo.whySection.buttonText}
             </button>
           </div>
         </div>
