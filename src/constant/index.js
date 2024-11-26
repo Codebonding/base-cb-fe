@@ -121,7 +121,7 @@ export const footerData = {
       { icon: <FaLinkedin className="w-6 h-6" />, href: 'https://linkedin.com', hoverColor: 'hover:text-blue-500' },
       { icon: <FaInstagram className="w-6 h-6" />, href: 'https://instagram.com', hoverColor: 'hover:text-pink-500' },
     ],
-    bottomText: '&copy; 2024 codebonding | All rights reserved.',
+    bottomText: '© 2024 codebonding | All rights reserved.',
   };
 
 export const sections_1 = [
