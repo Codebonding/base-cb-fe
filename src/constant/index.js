@@ -1,6 +1,6 @@
 import vision from '../assest/image/vision.jpg';
 import why from '../assest/image/why.jpg';
-import { FaEnvelope, FaPhoneAlt, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import Home from '../Component/Home/Home';
 import About from '../Component/About/About';
 import Contact from '../Component/Contact/Contact';
@@ -10,6 +10,8 @@ import master from '../assest/image/matser.jpg';
 import web from '../assest/image/web.jpg';
 import full from '../assest/image/full.jpg';
 import git from '../assest/image/git.png';
+import { FaInstagram } from 'react-icons/fa6';
+import { LiaInstagram } from 'react-icons/lia';
 
 
 export const aboutInfo = {
@@ -51,7 +53,7 @@ export const contactInfo = {
     description: "We're here to help! Reach out to us via email, phone, or social media. We'd love to hear from you!",
     footer: "Our team is available Monday to Friday, 9 AM to 9 PM. We look forward to hearing from you!"
   };
-  
+ 
 export const contactMethods = [
     {
       id: 'email',
@@ -74,12 +76,15 @@ export const contactMethods = [
     {
       id: 'instagram',
       title: 'Instagram',
-      icon: <FaInstagram className="text-2xl" />,
-      bgColor: 'bg-purple-600',
+      icon: <LiaInstagram  className="text-2xl"/>      ,
+      bgColor: 'bg-fuchsia-500',
       link: 'https://www.instagram.com/codebonding',
       linkText: 'Follow us on Instagram',
       description: 'Follow us on Instagram for the latest updates, photos, and behind-the-scenes content.',
-    },
+    }
+    
+    
+    
   ];
 
 export const sections = [
