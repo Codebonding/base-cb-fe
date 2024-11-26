@@ -49,7 +49,7 @@ export const aboutInfo = {
 export const contactInfo = {
     title: 'Contact Us',
     description: "We're here to help! Reach out to us via email, phone, or social media. We'd love to hear from you!",
-    footer: "Our team is available Monday to Friday, 9 AM to 6 PM. We look forward to hearing from you!"
+    footer: "Our team is available Monday to Friday, 9 AM to 9 PM. We look forward to hearing from you!"
   };
   
 export const contactMethods = [
@@ -58,8 +58,8 @@ export const contactMethods = [
       title: 'Email',
       icon: <FaEnvelope className="text-2xl" />,
       bgColor: 'bg-blue-600',
-      link: 'mailto:codebonding@gmail.com',
-      linkText: 'codebonding@gmail.com',
+      link: 'mailto:codebonding@codebonding.com',
+      linkText: 'codebonding@codebonding.com',
       description: 'Send us an email for general inquiries, feedback, or support. We’ll respond as quickly as possible.',
     },
     {
@@ -113,12 +113,9 @@ export const footerData = {
     },
     quickLinks: [
       { name: 'About Us', href: '#about' },
-      { name: 'Privacy Policy', href: '#privacy' },
       { name: 'Contact', href: '#contact' },
     ],
     socialLinks: [
-      { icon: <FaTwitter className="w-6 h-6" />, href: 'https://twitter.com', hoverColor: 'hover:text-blue-500' },
-      { icon: <FaLinkedin className="w-6 h-6" />, href: 'https://linkedin.com', hoverColor: 'hover:text-blue-500' },
       { icon: <FaInstagram className="w-6 h-6" />, href: 'https://instagram.com', hoverColor: 'hover:text-pink-500' },
     ],
     bottomText: '© 2024 codebonding | All rights reserved.',
@@ -147,7 +144,6 @@ export const sections_2 = [
       title: 'Comprehensive Web Development Training',
       description:
         'Our training program covers a wide range of essential web development technologies, including HTML and CSS for frontend design. Learn how to structure web pages effectively and apply styles that enhance user experience.',
-      buttonText: 'Learn More',
       image: web,
       buttonColor: 'bg-green-600',
       hoverColor: 'hover:bg-green-700',

@@ -6,14 +6,14 @@ const FAQ = () => {
   // FAQ data inside the component, including the description text
   const faqs = [
     {
-      question: 'What is Full Stack Development?',
+      question: 'What topics will be covered?',
       answer:
-        'Full stack development involves both frontend and backend technologies. A full stack developer is proficient in both the client side (frontend) and server side (backend) of web development.',
+        'The training covers HTML, CSS, Bootstrap, C++, React.js, Node.js, MySQL, and Git, focusing on building real-world full-stack projects.',
     },
     {
-      question: 'How long does the Full Stack Developer program take?',
+      question: 'Is it beginner-friendly?',
       answer:
-        'Our Full Stack Developer program typically takes around 6 months, depending on the pace of learning and the amount of time dedicated to the program.',
+        'Yes, it’s suitable for both beginners and those with some prior experience.',
     },
     {
       question: 'Do I need prior experience to join the program?',
@@ -21,14 +21,14 @@ const FAQ = () => {
         'No prior experience is required for our Full Stack Developer program. We start from the basics, and guide you through HTML, CSS, JavaScript, React, Node.js, and databases.',
     },
     {
-      question: 'What will I learn in the React training?',
+      question: 'What is the schedule?',
       answer:
-        'In the React training, you will learn how to create dynamic user interfaces using React. This includes understanding JSX, components, state management, and routing with React Router.',
+        'Classes are held on weekdays/weekends (live or recorded sessions are available).',
     },
     {
-      question: 'Can I get a certificate after completing the course?',
+      question: 'What tools are required?',
       answer:
-        'Yes, after completing the course and passing the assessments, you will receive a certificate that demonstrates your skills and knowledge in full stack development.',
+        'A laptop/PC with a stable internet connection is needed. Software/tools will be shared during the course.',
     },
   ];
 

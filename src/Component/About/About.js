@@ -22,9 +22,6 @@ const About = () => {
                 <li key={index}>{feature}</li>
               ))}
             </ul>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-md shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform">
-              {aboutInfo.visionSection.buttonText}
-            </button>
           </div>
 
           {/* Right Side - Image */}
@@ -63,9 +60,6 @@ const About = () => {
                 <li key={index}>{feature}</li>
               ))}
             </ul>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-md shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform">
-              {aboutInfo.whySection.buttonText}
-            </button>
           </div>
         </div>
       </div>

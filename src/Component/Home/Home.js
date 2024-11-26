@@ -35,11 +35,6 @@ const Home = () => {
               <div className="md:w-1/2 text-center md:text-left">
                 <h1 className="text-4xl font-bold mb-4 text-gray-800">{section.title}</h1>
                 <p className="text-lg text-gray-600 mb-6">{section.description}</p>
-                <button
-                  className={`${section.buttonColor} text-white px-6 py-3 rounded-md ${section.hoverColor} transition duration-300 transform hover:scale-105`}
-                >
-                  {section.buttonText}
-                </button>
               </div>
               <div className="md:w-1/2 flex justify-center">
                 <img
