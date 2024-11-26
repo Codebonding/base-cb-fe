@@ -67,7 +67,7 @@ export const contactMethods = [
       title: 'Phone',
       icon: <FaPhoneAlt className="text-2xl" />,
       bgColor: 'bg-green-600',
-      link: 'tel:+919361933929',
+      link: 'tel:+919488220722',
       linkText: '+91 9488220722',
       description: 'Call us directly for faster assistance. We’re available during office hours.',
     },
