@@ -1,0 +1,11 @@
+{
+    "apps": [
+      {
+        "name": "base-cb-fe",
+        "script": "npx",
+        "interpreter": "none",
+        "args": "serve -s build -l 8443"
+      }
+    ]
+  }
+  
