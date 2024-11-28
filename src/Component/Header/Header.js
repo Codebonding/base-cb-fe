@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../assest/image/logo.jpg';
+import { replace, useLocation, useNavigate } from 'react-router-dom';
 import { sections_1 } from '../../constant';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -17,8 +20,14 @@ const Header = () => {
   };
 
   const handleClick = (sectionId) => {
-    setActiveLink(sectionId);
-    scrollToSection(sectionId);
+    if(location.pathname === "/register"){
+      navigate("/", {replace : true});
+    }
+    else{
+      navigate(`#${sectionId}`, {replace : true});
+      setActiveLink(sectionId);
+      scrollToSection(sectionId);
+    }
   };
 
   // This will handle scroll events

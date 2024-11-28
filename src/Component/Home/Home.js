@@ -1,8 +1,14 @@
 import React from 'react';
 import { sections_2 } from '../../constant';
-
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/register');
+  };
+
   return (
     <div className="container mx-auto px-4 py-8 bg-white text-gray-900">
       {sections_2.map((section, index) => (
@@ -25,6 +31,7 @@ const Home = () => {
                 <p className="text-lg text-gray-600 mb-6">{section.description}</p>
                 <button
                   className={`${section.buttonColor} text-white px-6 py-3 rounded-md ${section.hoverColor} transition duration-300 transform hover:scale-105`}
+                  onClick={handleButtonClick}
                 >
                   {section.buttonText}
                 </button>
@@ -35,6 +42,12 @@ const Home = () => {
               <div className="md:w-1/2 text-center md:text-left">
                 <h1 className="text-4xl font-bold mb-4 text-gray-800">{section.title}</h1>
                 <p className="text-lg text-gray-600 mb-6">{section.description}</p>
+                <button
+                  className={`${section.buttonColor} text-white px-6 py-3 rounded-md ${section.hoverColor} transition duration-300 transform hover:scale-105`}
+                  onClick={handleButtonClick}
+                >
+                  {section.buttonText}
+                </button>
               </div>
               <div className="md:w-1/2 flex justify-center">
                 <img
