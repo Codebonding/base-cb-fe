@@ -3,17 +3,13 @@ import { footerData } from '../../constant';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-12 mt-12 rounded-t-lg shadow-lg">
+    <footer className="bg-gray-800 text-white py-12 rounded-t-lg shadow-lg">
       <div className="container mx-auto px-6 md:px-16">
-        {/* Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          {/* Logo/Brand Section */}
           <div>
             <h2 className="text-2xl font-semibold text-gray-300 mb-4">{footerData.brand.name}</h2>
             <p className="text-gray-400 text-sm">{footerData.brand.description}</p>
           </div>
-
-          {/* Quick Links */}
           <div>
             <h3 className="text-xl font-semibold text-gray-300 mb-4">Quick Links</h3>
             <ul className="text-gray-400 space-y-2">
@@ -24,8 +20,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
-          {/* Social Media Links */}
           <div>
             <h3 className="text-xl font-semibold text-gray-300 mb-4">Follow Us</h3>
             <div className="flex justify-center md:justify-start space-x-4">
@@ -43,8 +37,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom Section */}
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-400">{footerData.bottomText}</p>
         </div>

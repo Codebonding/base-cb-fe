@@ -16,7 +16,6 @@ const Home = () => {
           key={index}
           className={`flex flex-col md:flex-row items-center justify-between gap-8 mb-12 bg-gradient-to-r ${section.gradient} p-8 rounded-lg shadow-xl`}
         >
-          {/* Conditional Image Content Position */}
           {section.imageFirst ? (
             <>
               <div className="md:w-1/2 flex justify-center">

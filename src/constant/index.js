@@ -141,8 +141,7 @@ export const sections_2 = [
       buttonText: 'Join Now',
       image: master,
       buttonColor: 'bg-blue-600',
-      hoverColor: 'hover:bg-blue-700',
-      gradient: 'from-blue-50 to-blue-100',
+      hoverColor: 'hover:bg-white-700',
       imageFirst: true,  // Image should be on the left
     },
     {
@@ -150,31 +149,20 @@ export const sections_2 = [
       description:
         'Our training program covers a wide range of essential web development technologies, including HTML and CSS for frontend design. Learn how to structure web pages effectively and apply styles that enhance user experience.',
       image: web,
-      buttonColor: 'bg-green-600',
-      hoverColor: 'hover:bg-green-700',
-      gradient: 'from-green-50 to-green-100',
       imageFirst: false, // Image should be on the right
     },
     {
       title: 'Full Stack Developer Program',
       description:
         'Join our full-stack developer training where you will master both frontend and backend technologies. Learn React for dynamic user interfaces, Node.js for backend server management, and MySQL for efficient data storage.',
-      buttonText: 'Get Started',
       image: full,
-      buttonColor: 'bg-purple-600',
-      hoverColor: 'hover:bg-purple-700',
-      gradient: 'from-purple-50 to-purple-100',
       imageFirst: true,  // Image should be on the left
     },
     {
       title: 'Version Control Mastery with Git',
       description:
         'Master version control with Git. Learn how to manage code versions, collaborate with teams, and streamline your development workflow.',
-      buttonText: 'Learn About Version Control',
       image: git,
-      buttonColor: 'bg-red-600',
-      hoverColor: 'hover:bg-red-700',
-      gradient: 'from-red-50 to-red-100',
       imageFirst: false, // Image should be on the right
     },
   ];

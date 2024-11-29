@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+input[type=number] {
+  -moz-appearance: textfield !important;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,7 +28,6 @@ code {
     monospace;
 }
 
-/* General Walkthrough Container */
 .walkthrough {
   display: flex;
   flex-direction: column;
@@ -109,7 +118,6 @@ button:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
-/* Media Content */
 .media {
   display: flex;
   justify-content: center;
