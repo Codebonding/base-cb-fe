@@ -37,20 +37,16 @@ const Content = () => {
 
     return (
         <main className="flex-1 p-8 bg-gradient-to-r mt-[100px]">
-            {/* Text Scramble Section */}
             <section className="flex justify-center items-center h-full">
                 <div className="text-center">
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                         <span ref={textRef} className="text-scramble"></span>
                     </h1>
-                    {/* Dynamically rendered text from the first section */}
                     <p className="text-xl md:text-2xl font-medium">
                         {sections[0].text}
                     </p>
                 </div>
             </section>
-
-            {/* Dynamic Sections */}
             {sections.map((section) => (
                 <section
                     key={section.id}

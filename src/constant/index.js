@@ -121,7 +121,7 @@ export const footerData = {
       { name: 'Contact', href: '#contact' },
     ],
     socialLinks: [
-      { icon: <FaInstagram className="w-6 h-6" />, href: 'https://instagram.com', hoverColor: 'hover:text-pink-500' },
+      { icon: <FaInstagram className="w-6 h-6" />, href: 'https://www.instagram.com/codebonding?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', hoverColor: 'hover:text-pink-500' },
     ],
     bottomText: '© 2024 codebonding | All rights reserved.',
   };
@@ -140,9 +140,7 @@ export const sections_2 = [
         'Join our comprehensive training programs in HTML, CSS, React, Node.js, and more. Transform your career with full-stack development expertise.',
       buttonText: 'Join Now',
       image: master,
-      buttonColor: 'bg-blue-600',
-      hoverColor: 'hover:bg-white-700',
-      imageFirst: true,  // Image should be on the left
+      imageFirst: true,  
     },
     {
       title: 'Comprehensive Web Development Training',

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../assest/image/logo.jpg';
-import { replace, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { sections_1 } from '../../constant';
 
 const Header = () => {
@@ -19,25 +19,32 @@ const Header = () => {
     }
   };
 
-  const handleClick = (sectionId) => {
-    if(location.pathname === "/register"){
-      navigate("/", {replace : true});
-    }
-    else{
-      navigate(`#${sectionId}`, {replace : true});
-      setActiveLink(sectionId);
+  const handleClick = (sectionId, event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+
+    if (location.pathname === "/register") {
+      navigate("/", { replace: true });
+    } else {
+      // Scroll to the section
       scrollToSection(sectionId);
+      setActiveLink(sectionId);
+
+      // Update the URL without `#`
+      const newUrl = `${window.location.origin}${location.pathname}?section=${sectionId}`;
+      window.history.replaceState(null, "", newUrl);
     }
   };
 
-  // This will handle scroll events
   const handleScroll = () => {
     let foundSection = '';
     sections_1.forEach(({ id }) => {
       const section = document.getElementById(id);
       if (section) {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        if (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        ) {
           foundSection = id;
         }
       }
@@ -48,9 +55,18 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const sectionId = queryParams.get("section");
+
+    if (sectionId) {
+      scrollToSection(sectionId);
+      setActiveLink(sectionId);
+    }
+  }, [location.search]);
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -70,8 +86,8 @@ const Header = () => {
             {sections_1.map(({ id, label }) => (
               <li key={id}>
                 <a
-                  href={`#${id}`}
-                  onClick={() => handleClick(id)}
+                  href={`?section=${id}`}
+                  onClick={(event) => handleClick(id, event)}
                   className={`text-gray-800 relative overflow-hidden hover:text-green-500 transition-all duration-300 ease-in-out
                     ${activeLink === id ? 'text-green-500 font-semibold' : ''}`}
                 >
@@ -114,8 +130,8 @@ const Header = () => {
             {sections_1.map(({ id, label }) => (
               <li key={id}>
                 <a
-                  href={`#${id}`}
-                  onClick={() => handleClick(id)}
+                  href={`?section=${id}`}
+                  onClick={(event) => handleClick(id, event)}
                   className={`text-lg font-semibold text-gray-800 relative overflow-hidden hover:text-green-500  
                     ${activeLink === id ? 'text-green-500 font-semibold' : ''}`}
                 >

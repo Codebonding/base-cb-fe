@@ -1,12 +1,12 @@
-import React from 'react';
-import { sections_2 } from '../../constant';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { sections_2 } from "../../constant";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/register');
+    navigate("/register");
   };
 
   return (
@@ -26,27 +26,36 @@ const Home = () => {
                 />
               </div>
               <div className="md:w-1/2 text-center md:text-left">
-                <h1 className="text-4xl font-bold mb-4 text-gray-800">{section.title}</h1>
-                <p className="text-lg text-gray-600 mb-6">{section.description}</p>
+                <h1 className="text-4xl font-bold mb-4 text-gray-800">
+                  {section.title}
+                </h1>
+                <p className="text-lg text-gray-600 mb-6">
+                  {section.description}
+                </p>
+                {section.buttonText ?
                 <button
-                  className={`${section.buttonColor} text-white px-6 py-3 rounded-md ${section.hoverColor} transition duration-300 transform hover:scale-105`}
-                  onClick={handleButtonClick}
-                >
-                  {section.buttonText}
-                </button>
+                onClick={handleButtonClick}
+                style={{
+                  backgroundColor: "green",
+                  color: "white",
+                  padding: "8px 16px",
+                  borderRadius: "4px",
+                  transition: 'background-color 0.3s ease'
+                }}
+              >
+                {section.buttonText}
+              </button> : <div></div>}
               </div>
             </>
           ) : (
             <>
               <div className="md:w-1/2 text-center md:text-left">
-                <h1 className="text-4xl font-bold mb-4 text-gray-800">{section.title}</h1>
-                <p className="text-lg text-gray-600 mb-6">{section.description}</p>
-                <button
-                  className={`${section.buttonColor} text-white px-6 py-3 rounded-md ${section.hoverColor} transition duration-300 transform hover:scale-105`}
-                  onClick={handleButtonClick}
-                >
-                  {section.buttonText}
-                </button>
+                <h1 className="text-4xl font-bold mb-4 text-gray-800">
+                  {section.title}
+                </h1>
+                <p className="text-lg text-gray-600 mb-6">
+                  {section.description}
+                </p>
               </div>
               <div className="md:w-1/2 flex justify-center">
                 <img
