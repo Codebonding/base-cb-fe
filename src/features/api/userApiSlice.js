@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const userApiSlice = createApi({
     reducerPath: 'userApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://codebondingworkforce.com/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://codebondingworkforce.com/' }),
     endpoints: (builder) => ({
       createUser: builder.mutation({
         query: (userData) => {
