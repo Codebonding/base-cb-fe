@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { TextScramble } from './TextScramble'; // Importing TextScramble
+import { TextScramble } from './TextScramble';
 import { sections } from '../../constant';
 
 const Content = () => {
@@ -24,19 +24,17 @@ const Content = () => {
 
         const next = () => {
             fx.setText(phrases[counter]).then(() => {
-                setTimeout(next, 800); // Pause between phrases
+                setTimeout(next, 800);
             });
             counter = (counter + 1) % phrases.length;
         };
 
-        next(); // Start the text scramble
-
-        // Cleanup function to cancel animation if component unmounts
+        next();
         return () => cancelAnimationFrame(fx.frameRequest);
     }, []);
 
     return (
-        <main className="flex-1 p-8 bg-gradient-to-r mt-[100px]">
+        <main className="flex-1 bg-gradient-to-r mt-[100px]">
             <section className="flex justify-center items-center h-full">
                 <div className="text-center">
                     <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
