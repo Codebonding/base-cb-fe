@@ -73,7 +73,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-8 mt-[100px] min-h-screen bg-gray-200">
+    <div className="flex justify-center items-center py-24 min-h-screen bg-gray-200">
       <div className="w-full max-w-3xl bg-white rounded-lg shadow-xl overflow-hidden">
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-center">
           <h2 className="text-3xl font-bold text-white">Registration Form</h2>
