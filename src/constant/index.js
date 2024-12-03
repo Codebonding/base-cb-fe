@@ -60,8 +60,8 @@ export const contactMethods = [
     title: 'Email',
     icon: <FaEnvelope className="text-2xl" />,
     bgColor: 'bg-blue-600',
-    link: 'mailto:codebonding@codebonding.com',
-    linkText: 'codebonding@codebonding.com',
+    link: 'mailto:codebonding@gmail.com',
+    linkText: 'codebonding@gmail.com',
     description: 'Send us an email for general inquiries, feedback, or support. We’ll respond as quickly as possible.',
   },
   {
