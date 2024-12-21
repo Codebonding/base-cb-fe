@@ -13,6 +13,20 @@
   }
 }
 
+/* Add this to your global CSS file or a component-specific CSS file */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-border {
+  border-color: #007bff transparent transparent transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
