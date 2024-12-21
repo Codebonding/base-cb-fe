@@ -4,8 +4,17 @@ import { useGetCompaniesQuery } from "../../features/api/companyApiSlice";
 const JobPortal = () => {
   const { data: companies, isLoading, isError } = useGetCompaniesQuery();
 
-  if (isLoading) return <p>Loading job listings...</p>;
-  if (isError) return <p>Something went wrong! Unable to fetch job listings.</p>;
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50">
+        <div className="spinner-border animate-spin inline-block w-16 h-16 border-4 border-solid border-current border-t-transparent rounded-full" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (isError) return <p className="text-center text-red-500">Something went wrong! Unable to fetch job listings.</p>;
 
   return (
     <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 py-16">

@@ -60,8 +60,8 @@ export const contactMethods = [
     title: 'Email',
     icon: <FaEnvelope className="text-2xl" />,
     bgColor: 'bg-blue-600',
-    link: 'mailto:codebonding@codebonding.com',
-    linkText: 'codebonding@codebonding.com',
+    link: 'mailto:codebonding@gmail.com',
+    linkText: 'codebonding@gmail.com',
     description: 'Send us an email for general inquiries, feedback, or support. We’ll respond as quickly as possible.',
   },
   {
@@ -73,8 +73,7 @@ export const contactMethods = [
     linkText: '+91 9488220722',
     description: 'Call us directly for faster assistance. We’re available during office hours.',
   },
-  {
-    id: 'instagram',
+  {   id: 'instagram',
     title: 'Instagram',
     icon: <LiaInstagram className="text-2xl" />,
     bgColor: 'bg-fuchsia-500',
@@ -114,8 +113,11 @@ export const footerData = {
     description: 'We are passionate about coding and helping developers grow. Join our community!',
   },
   quickLinks: [
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About Us', href: '?section=about' },
+    { name: 'Contact', href: '?section=contact' },
+    { name: 'Privacy Policy', href: 'Privacy-Policy'},
+    { name: 'Disclaimer', href: 'Disclaimer'},
+    { name: 'Terms and Conditions', href: 'Terms-and-conditions'}
   ],
   socialLinks: [
     { icon: <FaInstagram className="w-6 h-6" />, href: 'https://www.instagram.com/codebonding?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', hoverColor: 'hover:text-pink-500' },

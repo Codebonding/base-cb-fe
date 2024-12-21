@@ -87,7 +87,7 @@ const Header = () => {
   };
 
   const isSpecialRoute =
-    location.pathname === "/register" || location.pathname === "/jobportal";
+    location.pathname === "/register" || location.pathname === "/jobportal" || location.pathname === "/Privacy-Policy" || location.pathname === "Disclaimer" || location.pathname==="/Terms-and-conditions";
 
   return (
     <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
