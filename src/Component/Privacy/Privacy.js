@@ -1,48 +1,46 @@
-import React from 'react';
+import React from "react";
+import { privacyPolicySections } from "../../constant";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="container mx-auto p-6 max-w-4xl bg-white shadow-lg rounded-lg mt-[100px]">
-      <h1 className="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-gray-200 pb-2">
-        Privacy Policy
-      </h1>
-      <p className="text-gray-600 mb-6">
-        At CodeBonding, your privacy is important to us. This policy outlines how we collect, use, and protect your data.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-gray-700 mb-3">1. Information We Collect</h2>
-      <ul className="list-disc list-inside text-gray-600 mb-4">
-        <li><strong>Personal:</strong> Name, email, phone, and payment info.</li>
-        <li><strong>Usage:</strong> IP address, browser type, and cookies.</li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold text-gray-700 mb-3">2. How We Use Your Data</h2>
-      <p className="text-gray-600 mb-4">To provide services, improve our website, and send updates.</p>
-
-      <h2 className="text-2xl font-semibold text-gray-700 mb-3">3. Sharing & Security</h2>
-      <p className="text-gray-600 mb-4">
-        Data is shared only with trusted partners or when legally required. We use safeguards to protect your data but cannot guarantee complete security.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-gray-700 mb-3">4. Cookies</h2>
-      <p className="text-gray-600 mb-4">
-        Cookies enhance your experience. You can disable them in browser settings.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-gray-700 mb-3">5. Your Rights</h2>
-      <p className="text-gray-600 mb-4">
-        Access, correct, or delete your data by contacting us.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-gray-700 mb-3">6. Updates</h2>
-      <p className="text-gray-600 mb-4">
-        Changes to this policy will be posted here. Please review regularly.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-gray-700 mb-3">7. Contact</h2>
-      <p className="text-gray-600 mb-4">For questions, contact us via the website.</p>
-    </div>
+    <section className="bg-gradient-to-r from-gray-100 via-white to-gray-100 py-16">
+      <div className="container mx-auto px-6 lg:px-16 max-w-4xl">
+        <Header
+          title="Privacy Policy"
+          description="Your privacy is important to us. Learn how CodeBonding collects, uses, and protects your information."
+        />
+        <div className="bg-white p-8 rounded-lg shadow-lg">
+          {privacyPolicySections.map((section, index) => (
+            <Section key={index} title={section.title} content={section.content} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
+
+const Header = ({ title, description }) => (
+  <div className="text-center mb-12">
+    <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">{title}</h1>
+    <p className="text-lg text-gray-600 max-w-2xl mx-auto">{description}</p>
+  </div>
+);
+
+const Section = ({ title, content }) => (
+  <div className="mb-6">
+    <h2 className="text-2xl font-semibold text-gray-800 mb-4">{title}</h2>
+    {content.map((item, index) =>
+      item.type === "text" ? (
+        <p key={index} className="text-lg text-gray-700 leading-relaxed">{item.text}</p>
+      ) : (
+        <ul key={index} className="list-disc list-inside text-gray-700 text-lg space-y-2">
+          {item.items.map((listItem, i) => (
+            <li key={i}>{listItem}</li>
+          ))}
+        </ul>
+      )
+    )}
+  </div>
+);
 
 export default PrivacyPolicy;

@@ -113,8 +113,8 @@ export const footerData = {
     description: 'We are passionate about coding and helping developers grow. Join our community!',
   },
   quickLinks: [
-    { name: 'About Us', href: '?section=about' },
-    { name: 'Contact', href: '?section=contact' },
+    { name: 'About Us', href: '/' },
+    { name: 'Contact', href: '/' },
     { name: 'Privacy Policy', href: 'Privacy-Policy'},
     { name: 'Disclaimer', href: 'Disclaimer'},
     { name: 'Terms and Conditions', href: 'Terms-and-conditions'}
@@ -131,6 +131,87 @@ export const sections_1 = [
   { id: 'about', label: 'About' },
   { id: 'faq', label: 'FAQ' },
   { id: 'contact', label: 'Contact' }
+];
+
+export const DisclaimerContent = [
+  "Information such as pricing and schedules may change without prior notice.",
+  "CodeBonding is not responsible for third-party links or their content.",
+  "We are not liable for damages resulting from the use of our services or content.",
+  "Testimonials reflect individual experiences and are not guaranteed results.",
+  "Seek professional advice for legal, financial, or other specialized needs."
+];
+
+// privacyPolicyData.js
+export const privacyPolicySections = [
+  {
+    title: "1. Information We Collect",
+    content: [
+      { type: "list", items: ["Name, email, phone, and payment information.", "IP address, browser type, and cookies for a better experience."] },
+    ],
+  },
+  {
+    title: "2. How We Use Your Data",
+    content: [
+      { type: "text", text: "We use your data to provide services, improve our platform, and communicate updates or offers." },
+    ],
+  },
+  {
+    title: "3. Sharing & Security",
+    content: [
+      { type: "text", text: "Your data is shared only with trusted partners or as required by law. We implement strong security measures to protect your data, but no system is completely secure." },
+    ],
+  },
+  {
+    title: "4. Cookies",
+    content: [
+      { type: "text", text: "Cookies help us enhance your experience. You can manage cookie preferences through your browser settings." },
+    ],
+  },
+  {
+    title: "5. Your Rights",
+    content: [
+      { type: "text", text: "You have the right to access, correct, or delete your data. Contact us for assistance." },
+    ],
+  },
+  {
+    title: "6. Updates",
+    content: [
+      { type: "text", text: "We may update this policy periodically. Please review it regularly for changes." },
+    ],
+  },
+  {
+    title: "7. Contact",
+    content: [
+      { type: "text", text: "If you have questions or concerns, reach out to us through our contact page." },
+    ],
+  },
+];
+
+// termsData.js
+export const termsData = [
+  {
+    title: "Key Terms",
+    content: [
+      "Services include IT training, live sessions, internships, and placement guidance.",
+      "Accounts must be registered with accurate details; you are responsible for your credentials.",
+      "Course materials are for personal use only and must not be shared or distributed.",
+      "Fees must be paid in advance; refunds follow our refund policy.",
+      "Users must act responsibly and not engage in unlawful activities on the platform.",
+      "All website content is the intellectual property of CodeBonding.",
+    ],
+  },
+  {
+    title: "Liability and Privacy",
+    content: [
+      "CodeBonding is not responsible for third-party content or links. Individual results may vary based on effort and market conditions. Personal data is handled as per our Privacy Policy.",
+    ],
+  },
+  {
+    title: "Changes and Contact",
+    content: [
+      "Terms may be updated periodically. For inquiries, please contact us through our website.",
+    ],
+  },
 ];
 
 export const sections_2 = [
