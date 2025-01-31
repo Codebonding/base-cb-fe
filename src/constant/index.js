@@ -126,7 +126,7 @@ export const footerData = {
 };
 
 export const sections_1 = [
-  { id: "jobportal", label: "Jobportal" },
+  // { id: "jobportal", label: "Jobportal" },
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'faq', label: 'FAQ' },
@@ -216,32 +216,32 @@ export const termsData = [
 
 export const sections_2 = [
   {
-    title: 'Master Your IT Skills',
+    title: 'Kickstart Your IT Career with CodeBonding',
     description:
-      'Join our comprehensive training programs in HTML, CSS, React, Node.js, and more. Transform your career with full-stack development expertise.',
+      'Join CodeBonding’s expert-led training programs covering HTML, CSS, React, Node.js, and more. Build a strong foundation in full-stack development and secure your future in the IT industry.',
     buttonText: 'Join Now',
     image: master,
     imageFirst: true,
   },
   {
-    title: 'Comprehensive Web Development Training',
+    title: 'CodeBonding: Shaping Future Developers',
     description:
-      'Our training program covers a wide range of essential web development technologies, including HTML and CSS for frontend design. Learn how to structure web pages effectively and apply styles that enhance user experience.',
+      'As a product-based IT company, CodeBonding offers hands-on web development training in HTML, CSS, JavaScript, and modern frameworks. Learn how to structure web applications effectively and build real-world projects.',
     image: web,
-    imageFirst: false, // Image should be on the right
+    imageFirst: false, 
   },
   {
-    title: 'Full Stack Developer Program',
+    title: 'Full Stack Developer Program by CodeBonding',
     description:
-      'Join our full-stack developer training where you will master both frontend and backend technologies. Learn React for dynamic user interfaces, Node.js for backend server management, and MySQL for efficient data storage.',
+      'Our Full Stack Developer training equips you with industry-relevant skills in frontend and backend development. Master React for interactive UI, Node.js for server-side logic, and MySQL for robust data management.',
     image: full,
-    imageFirst: true,  // Image should be on the left
+    imageFirst: true,
   },
   {
-    title: 'Version Control Mastery with Git',
+    title: 'Version Control & Team Collaboration with Git',
     description:
-      'Master version control with Git. Learn how to manage code versions, collaborate with teams, and streamline your development workflow.',
+      'At CodeBonding, we emphasize best practices in version control. Learn Git to manage code efficiently, collaborate with teams, and streamline your software development workflow.',
     image: git,
-    imageFirst: false, // Image should be on the right
+    imageFirst: false,
   },
 ];
