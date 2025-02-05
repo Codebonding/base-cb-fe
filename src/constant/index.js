@@ -219,7 +219,7 @@ export const sections_2 = [
     title: 'Kickstart Your IT Career with CodeBonding',
     description:
       'Join CodeBonding’s expert-led training programs covering HTML, CSS, React, Node.js, and more. Build a strong foundation in full-stack development and secure your future in the IT industry.',
-    // buttonText: 'Join Now',
+    buttonText: 'Join Now',
     image: master,
     imageFirst: true,
   },
