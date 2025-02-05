@@ -1,13 +1,13 @@
 import React from "react";
 import { sections_2 } from "../../constant";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleButtonClick = () => {
-  //   navigate("/register");
-  // };
+  const handleButtonClick = () => {
+    navigate("/register");
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white text-gray-900">
@@ -32,7 +32,7 @@ const Home = () => {
                 <p className="text-lg text-gray-600 mb-6">
                   {section.description}
                 </p>
-                {/* {section.buttonText ?
+                {section.buttonText ?
                 <button
                 onClick={handleButtonClick}
                 style={{
@@ -44,7 +44,7 @@ const Home = () => {
                 }}
               >
                 {section.buttonText}
-              </button> : <div></div>} */}
+              </button> : <div></div>}
               </div>
             </>
           ) : (

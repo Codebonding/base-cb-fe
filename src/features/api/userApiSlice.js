@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const userApiSlice = createApi({
     reducerPath: 'userApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://vcxyhhzvjsaa6p2acmczr3v7pi0xpffx.lambda-url.us-east-1.on.aws/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://t1lrfv0owg.execute-api.ap-southeast-2.amazonaws.com/' }),
     endpoints: (builder) => ({
       createUser: builder.mutation({
         query: (userData) => {
