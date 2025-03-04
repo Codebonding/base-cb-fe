@@ -16,7 +16,6 @@ const validationSchema = Yup.object().shape({
   passedOutYear: Yup.number()
     .typeError("PassedOut Year is required")
     .min(1900, "Passedout year must be after 1900")
-    .max(new Date().getFullYear(), "Passedout year cannot be in the future")
     .required("Passedout year is required"),
   address: Yup.string().required("Address is required"),
   district: Yup.string().required("District is required"),
