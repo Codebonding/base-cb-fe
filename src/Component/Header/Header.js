@@ -24,19 +24,15 @@ const Header = () => {
 
     if (sectionId === "jobportal") {
       if (location.pathname !== "/jobportal") {
-        // Navigate to /jobportal if not already there
         navigate("/jobportal", { replace: true });
       } else {
-        // Scroll to the top of the jobportal page if already there
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } else {
       if (location.pathname === "/jobportal") {
-        // Navigate back to the home route first, then scroll
         navigate("/", { replace: true });
-        setTimeout(() => scrollToSection(sectionId), 300); // Delay to ensure navigation completes
+        setTimeout(() => scrollToSection(sectionId), 300);
       } else {
-        // Scroll to the section directly
         scrollToSection(sectionId);
       }
       setActiveLink(sectionId);
@@ -87,7 +83,13 @@ const Header = () => {
   };
 
   const isSpecialRoute =
-    location.pathname === "/register" || location.pathname === "/jobportal" || location.pathname === "/Privacy-Policy" || location.pathname === "/Disclaimer" || location.pathname==="/Terms-and-conditions";
+    location.pathname === "/register" ||
+    location.pathname === "/jobportal" ||
+    location.pathname === "/Privacy-Policy" ||
+    location.pathname === "/Disclaimer" ||
+    location.pathname === "/Terms-and-conditions"||
+    location.pathname ==="/Candiate" ||
+    location.pathname ==="/login";
 
   return (
     <header className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
@@ -95,7 +97,7 @@ const Header = () => {
         {isSpecialRoute ? (
           <button
             onClick={handleBack}
-            className="text-gray-800 hover:text-green-500 flex items-center space-x-2"
+            className="text-[#105E6B] hover:text-[#0C4A5F] flex items-center space-x-2 transition-all duration-300 ease-in-out"
           >
             <svg
               className="w-6 h-6"
@@ -111,6 +113,7 @@ const Header = () => {
                 d="M15 19l-7-7 7-7"
               />
             </svg>
+            <span>Back</span>
           </button>
         ) : (
           <>
@@ -118,26 +121,48 @@ const Header = () => {
               <img src={logo} alt="Logo" className="w-32 h-16 object-contain" />
             </div>
             <nav className="hidden md:flex space-x-10 text-lg font-medium">
-              <ul className="flex space-x-10 text-gray-800">
+              <ul className="flex space-x-10 text-[#105E6B]">
                 {sections_1.map(({ id, label }) => (
                   <li key={id}>
                     <a
                       href={id === "jobpanel" ? "/jobpanel" : `?section=${id}`}
                       onClick={(event) => handleClick(id, event)}
-                      className={`text-gray-800 relative overflow-hidden hover:text-green-500 transition-all duration-300 ease-in-out
-        ${activeLink === id ? "text-green-500 font-semibold" : ""}`}
+                      className={`relative overflow-hidden hover:text-[#0C4A5F] transition-all duration-300 ease-in-out
+                        ${
+                          activeLink === id
+                            ? "text-[#0C4A5F] font-semibold"
+                            : ""
+                        }`}
                     >
                       {label}
-                      <span className="absolute left-0 bottom-0 w-full h-1 bg-green-500 transform scale-x-0 origin-left transition-all duration-300 ease-in-out"></span>
+                      <span
+                        className={`absolute left-0 bottom-0 w-full h-0.5 bg-[#0C4A5F] transform ${
+                          activeLink === id ? "scale-x-100" : "scale-x-0"
+                        } origin-left transition-all duration-300 ease-in-out`}
+                      ></span>
                     </a>
                   </li>
                 ))}
               </ul>
             </nav>
+            <div className="hidden md:flex space-x-4">
+              <button
+                onClick={() => navigate("/Candiate")}
+                className="px-6 py-2 text-white bg-[#105E6B] rounded-lg hover:bg-[#0C4A5F] transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                Sign Up
+              </button>
+              <button
+                onClick={() => navigate("/login")}
+                className="px-6 py-2 text-[#105E6B] bg-transparent border-2 border-[#105E6B] rounded-lg hover:bg-[#105E6B] hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                Login
+              </button>
+            </div>
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-800 hover:text-green-500"
+                className="text-[#105E6B] hover:text-[#0C4A5F] transition-all duration-300 ease-in-out"
               >
                 <svg
                   className="w-8 h-8"
@@ -158,22 +183,48 @@ const Header = () => {
           </>
         )}
       </div>
-      {isMenuOpen && !isSpecialRoute && (
-        <div className="md:hidden bg-white shadow-lg py-4 absolute top-16 left-0 w-full z-40 transition-all duration-300 ease-in-out">
-          <ul className="flex flex-col space-y-6 px-6">
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-[#105E6B] bg-opacity-95 shadow-lg fixed w-full top-16 left-0 z-40">
+          <ul className="flex flex-col space-y-4 p-6 text-white">
             {sections_1.map(({ id, label }) => (
               <li key={id}>
                 <a
-                  href={id === "jobportal" ? "/jobportal" : `?secion=${id}`}
-                  onClick={(event) => handleClick(id, event)}
-                  className={`text-lg font-semibold text-gray-800 relative overflow-hidden hover:text-green-500  
-                    ${activeLink === id ? "text-green-500 font-semibold" : ""}`}
+                  href={id === "jobpanel" ? "/jobpanel" : `?section=${id}`}
+                  onClick={(event) => {
+                    handleClick(id, event);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`block py-2 hover:text-[#0C4A5F] transition-all duration-300 ease-in-out
+                    ${activeLink === id ? "text-[#0C4A5F] font-semibold" : ""}`}
                 >
                   {label}
-                  <span className="absolute left-0 bottom-0 w-full h-1 bg-green-500 transform scale-x-0 origin-left transition-all duration-300 ease-in-out"></span>
                 </a>
               </li>
             ))}
+            <li>
+              <button
+                onClick={() => {
+                  navigate("/Candiate");
+                  setIsMenuOpen(false);
+                }}
+                className="w-full px-6 py-2 text-[#105E6B] bg-white rounded-lg hover:bg-[#0C4A5F] hover:!text-white transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                Sign Up
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  navigate("/login");
+                  setIsMenuOpen(false);
+                }}
+                className="w-full px-6 py-2 text-white bg-transparent border-2 border-white rounded-lg hover:bg-white hover:!text-white transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                Login
+              </button>
+            </li>
           </ul>
         </div>
       )}
