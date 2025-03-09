@@ -104,7 +104,6 @@ const Dashboard = () => {
                 <li><strong>Answer Selection:</strong> Select only one answer for each question. Once selected, your answer will be saved automatically.</li>
                 <li><strong>Submission:</strong> Once you submit the test, you cannot make any changes. Ensure all answers are correct before submitting.</li>
                 <li><strong>Honesty:</strong> Do not use any external resources or assistance during the test. Violations may result in disqualification.</li>
-                <li><strong>Results:</strong> Your results will be displayed after the test is submitted. Review your performance and seek feedback if needed.</li>
                 <li><strong>Technical Issues:</strong> In case of any technical issues, contact support immediately. Do not refresh or close the browser during the test.</li>
               </ul>
               <p className="text-gray-600 mt-3 italic">By starting the test, you agree to abide by these terms and conditions.</p>
