@@ -56,7 +56,7 @@ const Dashboard = () => {
       >
         <h2 className="text-xl font-bold text-center mb-6">Dashboard</h2>
         <nav className="flex-grow">
-          <ul className="space-y-4">
+          {/* <ul className="space-y-4">
             <li
               className={`flex items-center p-2 rounded-lg cursor-pointer ${
                 activeComponent === "mcq" ? "bg-[#164D5A]" : "hover:bg-[#164D5A]"
@@ -69,7 +69,7 @@ const Dashboard = () => {
               <FaQuestionCircle className="mr-3" />
               <span>MCQ Test</span>
             </li>
-          </ul>
+          </ul> */}
         </nav>
         {/* ✅ Logout Button */}
         <button
