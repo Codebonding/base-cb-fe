@@ -82,7 +82,7 @@ const Dashboard = () => {
       </div>
 
       {/* ✅ Main Content Area */}
-      <div className="flex-1 p-6 mt-12 md:mt-0">
+      {/* <div className="flex-1 p-6 mt-12 md:mt-0">
         {activeComponent === "mcq" ? (
           <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6">
             <h1 className="text-2xl font-bold text-[#195E6A]">MCQ Test</h1>
@@ -110,7 +110,7 @@ const Dashboard = () => {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
