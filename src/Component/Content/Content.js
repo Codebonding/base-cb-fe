@@ -51,10 +51,7 @@ const Content = () => {
                 <section
                     key={section.id}
                     id={section.id}
-                    className="flex flex-col justify-center items-center"
-                    style={{
-                        animation: 'fadeIn 1s ease-in-out' 
-                    }}
+                   
                 >
                     <div className="text-center">
                         {section.component}

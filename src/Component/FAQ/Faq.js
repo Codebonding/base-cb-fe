@@ -1,85 +1,77 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [
     {
-      question: "What topics will be covered?",
+      question: 'What kind of training does CodeBonding offer?',
       answer:
-        "The training covers HTML, CSS, Bootstrap, C++, React.js, Node.js, MySQL, and Git, focusing on building real-world full-stack projects.",
+        'CodeBonding offers a wide range of IT training programs, including Full Stack Development, C++, React.js, Node.js, MySQL, web design, and more. Our courses cater to all skill levels, from beginners to advanced, and are available in both online and offline formats.',
     },
     {
-      question: "Is it beginner-friendly?",
+      question: 'What is the duration of your training programs?',
       answer:
-        "Yes, it’s suitable for both beginners and those with some prior experience.",
+        'Our training programs vary in duration depending on the course. Full Stack Development, for example, runs for several months, while shorter courses like C++ boot camps may last a few weeks. We offer flexible scheduling with weekday and weekend options to fit your needs.',
     },
     {
-      question: "Do I need prior experience to join the program?",
+      question: 'Does CodeBonding provide placement assistance after training?',
       answer:
-        "No prior experience is required for our Full Stack Developer program. We start from the basics, and guide you through HTML, CSS, JavaScript, React, Node.js, and databases.",
+        'Yes, CodeBonding provides full placement assistance to students who successfully complete their training. We offer interview coaching, job preparation, and connect students with potential employers through our extensive network.',
     },
     {
-      question: "What is the schedule?",
+      question: 'How can I apply for an internship at CodeBonding?',
       answer:
-        "Classes are held on weekdays/weekends (live or recorded sessions are available).",
+        'CodeBonding offers internships to students and freshers. You can apply by visiting our website and filling out the internship application form. Interns get hands-on experience with real-time projects and have the potential to be hired full-time based on performance.',
     },
     {
-      question: "What tools are required?",
+      question: 'How does CodeBonding support the career growth of its employees and interns?',
       answer:
-        "A laptop/PC with a stable internet connection is needed. Software/tools will be shared during the course.",
+        'CodeBonding supports career growth by providing real-time project experience, mentorship from industry experts, and continuous learning opportunities. Our employees and interns receive training in emerging technologies, and we offer clear career paths with the possibility of full-time positions after internships.',
     },
   ];
 
-  const toggleAnswer = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 py-16">
-      <div className="container mx-auto px-6 lg:px-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to some of the most common questions below. Click on
-            any question to reveal the answer.
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
+    <div className="min-h-screen flex items-center justify-center bg-[#294854] p-8">
+      <div className="w-full max-w-4xl mx-auto space-y-8">
+        <h2 className="text-4xl font-bold text-center text-[#2ECAFC] mb-8">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4 w-full">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className={`bg-[#0E5C6B] rounded-xl shadow-md transition-all duration-300 ${
+                activeIndex === index ? 'ring-2 ring-[#2ECAFC]' : 'hover:shadow-lg'
+              }`}
+            >
               <div
-                key={index}
-                className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300 ease-in-out"
+                className="flex justify-between items-center p-6 cursor-pointer"
+                onClick={() => toggleFAQ(index)}
               >
-                <button
-                  className="w-full text-left p-6 flex items-center justify-between bg-gray-100 hover:bg-gray-200 transition-colors duration-300 rounded-lg focus:outline-none"
-                  onClick={() => toggleAnswer(index)}
-                >
-                  <h2 className="text-2xl font-semibold text-gray-800">
-                    {faq.question}
-                  </h2>
-                  <span className="text-2xl text-gray-600">
-                    {isOpen ? "-" : "+"}
-                  </span>
-                </button>
-                <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden`}
-                  style={{
-                    maxHeight: isOpen ? "500px" : "0",
-                  }}
-                >
-                  <div className="bg-gray-50 p-6 border-t border-gray-200">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
+                <h3 className="text-xl font-semibold text-white">{faq.question}</h3>
+                <FontAwesomeIcon
+                  icon={activeIndex === index ? faChevronUp : faChevronDown}
+                  className="text-[#2ECAFC] text-xl"
+                />
+              </div>
+              <div
+                className={`transition-all duration-500 ease-in-out ${
+                  activeIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                } overflow-hidden`}
+              >
+                <div className="px-6 pb-6">
+                  <p className="text-gray-200">{faq.answer}</p>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </div>
