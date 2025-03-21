@@ -82,22 +82,27 @@ export const sections = [
   },
 ];
 
+
 export const footerData = {
   brand: {
-    name: 'codebonding',
+    name: 'CodeBonding',
     description: 'We are passionate about coding and helping developers grow. Join our community!',
   },
   quickLinks: [
     { name: 'About Us', href: '/' },
     { name: 'Contact', href: '/' },
-    { name: 'Privacy Policy', href: 'Privacy-Policy'},
-    { name: 'Disclaimer', href: 'Disclaimer'},
-    { name: 'Terms and Conditions', href: 'Terms-and-conditions'}
+    { name: 'Privacy Policy', href: 'Privacy-Policy' },
+    { name: 'Disclaimer', href: 'Disclaimer' },
+    { name: 'Terms and Conditions', href: 'Terms-and-conditions' },
   ],
   socialLinks: [
-    { icon: <FaInstagram className="w-6 h-6" />, href: 'https://www.instagram.com/codebonding?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', hoverColor: 'hover:text-pink-500' },
+    {
+      icon: <FaInstagram className="w-6 h-6" />,
+      href: 'https://www.instagram.com/codebonding?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+      hoverColor: 'hover:text-pink-500',
+    },
   ],
-  bottomText: '© 2024 codebonding | All rights reserved.',
+  bottomText: '© 2024 CodeBonding | All rights reserved.',
 };
 
 export const sections_1 = [
