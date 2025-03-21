@@ -16,41 +16,6 @@ import Frontend from '../Component/Home/Frontend';
 import Backend from '../Component/Home/Backend';
 import Dev from '../Component/Home/Dev';
 
-
-export const aboutInfo = {
-  header: {
-    title: 'About Us',
-    description: 'We empower developers by offering cutting-edge training, fostering innovation, and guiding tech professionals towards successful careers.',
-  },
-  visionSection: {
-    title: 'Our Vision',
-    description: 'We believe in transforming passionate learners into skilled professionals. Our structured web development programs prepare students for the tech industry, empowering them with confidence and knowledge.',
-    features: [
-      'Hands-on, practical learning experience.',
-      'Expert mentors who understand real-world challenges.',
-      'Access to an active, supportive tech community.',
-    ],
-    buttonText: 'Learn More',
-    image: vision,
-    imageAlt: 'Our Vision',
-    imageCaption: 'Empowering Developers',
-  },
-  whySection: {
-    title: 'Why Choose Us?',
-    description: 'Our blend of theoretical and practical training ensures that our graduates are not just prepared for the workforce, but they excel within it. We\'re committed to building confident, capable professionals.',
-    features: [
-      'Modern curriculum covering industry-relevant technologies.',
-      'Real-world projects that showcase your abilities.',
-      'Focus on career advancement and job readiness.',
-    ],
-    buttonText: 'Join Our Program',
-    image: why,
-    imageAlt: 'Why Choose Us',
-    imageCaption: 'Building the Future',
-  },
-};
-
-
 export const contactInfo = {
   title: 'Contact Us',
   description: "We're here to help! Reach out to us via email, phone, or social media. We'd love to hear from you!",
