@@ -47,9 +47,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-white mb-4">Contact Us</h3>
             <ul className="text-gray-300 space-y-2">
-              <li>Email: <a href="mailto:support@codebonding.com" className="hover:text-[#14B4A6]">support@codebonding.com</a></li>
-              <li>Phone: <a href="tel:+1234567890" className="hover:text-[#14B4A6]">+1 (234) 567-890</a></li>
-              <li>Address: 123 Code Street, Developer City</li>
+              <li>Email: <a href="mailto:support@codebonding.com" className="hover:text-[#14B4A6]">info@codebonding.com</a></li>
+              <li>Phone: <a href="tel:+1234567890" className="hover:text-[#14B4A6]">+91 94882 20722</a></li>
+              <li>Address: 9/259/8, Nalikkal Privu Road, P M Nagar, Seelanaickenpatti, Salem, Dasanaickenpatti, Tamil Nadu 636201</li>
             </ul>
           </div>
 
