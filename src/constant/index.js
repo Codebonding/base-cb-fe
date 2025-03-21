@@ -14,6 +14,7 @@ import { FaInstagram } from 'react-icons/fa6';
 import { LiaInstagram } from 'react-icons/lia';
 import Frontend from '../Component/Home/Frontend';
 import Backend from '../Component/Home/Backend';
+import Dev from '../Component/Home/Dev';
 
 
 export const aboutInfo = {
@@ -97,6 +98,10 @@ export const sections = [
    {
     id: 'backend',
     component: <Backend />,
+  },
+  {
+    id: 'devops',
+    component: <Dev />,
   },
   {
     id: 'about',
