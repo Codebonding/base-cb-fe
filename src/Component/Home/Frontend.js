@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import img1 from "../../assest/image/c.jpg";
-import img2 from "../../assest/image/c++.webp";
-import img3 from "../../assest/image/java.png";
-import img4 from "../../assest/image/python.jpg";
+import img1 from "../../assest/image/angular.webp";
+import img2 from "../../assest/image/html.avif";
+import img3 from "../../assest/image/next.webp";
+import img4 from "../../assest/image/react.webp";
+import img5 from "../../assest/image/javascript (2).jpg";
+import img6 from "../../assest/image/css (2).jpg";
 
-const images = [img1, img2, img3, img4];
+const images = [img1, img2, img3, img4, img5, img6];
 
 // Duplicate images to create a seamless loop
 const extendedImages = [img4, ...images, img1];
 
-const Home = () => {
+const Frontend = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
 
   useEffect(() => {
@@ -95,4 +97,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Frontend;

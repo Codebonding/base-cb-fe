@@ -12,6 +12,7 @@ import full from '../assest/image/full.jpg';
 import git from '../assest/image/git.png';
 import { FaInstagram } from 'react-icons/fa6';
 import { LiaInstagram } from 'react-icons/lia';
+import Frontend from '../Component/Home/Frontend';
 
 
 export const aboutInfo = {
@@ -87,23 +88,22 @@ export const sections = [
   {
     id: 'home',
     component: <Home />,
-    background: 'bg-gray-100',
-    text: 'Start mastering IT skills and transform your future today!' // Moved the sentence here
+  },
+  {
+    id: 'frontend',
+    component: <Frontend />,
   },
   {
     id: 'about',
     component: <About />,
-    background: 'bg-gray-100'
   },
   {
     id: 'contact',
     component: <Contact />,
-    background: 'bg-gray-200'
   },
   {
     id: 'faq',
     component: <FAQ />,
-    background: 'bg-gray-200'
   },
 ];
 
@@ -214,34 +214,3 @@ export const termsData = [
   },
 ];
 
-export const sections_2 = [
-  {
-    title: 'Kickstart Your IT Career with CodeBonding',
-    description:
-      'Join CodeBonding’s expert-led training programs covering HTML, CSS, React, Node.js, and more. Build a strong foundation in full-stack development and secure your future in the IT industry.',
-    buttonText: 'Join Now',
-    image: master,
-    imageFirst: true,
-  },
-  {
-    title: 'CodeBonding: Shaping Future Developers',
-    description:
-      'As a product-based IT company, CodeBonding offers hands-on web development training in HTML, CSS, JavaScript, and modern frameworks. Learn how to structure web applications effectively and build real-world projects.',
-    image: web,
-    imageFirst: false, 
-  },
-  {
-    title: 'Full Stack Developer Program by CodeBonding',
-    description:
-      'Our Full Stack Developer training equips you with industry-relevant skills in frontend and backend development. Master React for interactive UI, Node.js for server-side logic, and MySQL for robust data management.',
-    image: full,
-    imageFirst: true,
-  },
-  {
-    title: 'Version Control & Team Collaboration with Git',
-    description:
-      'At CodeBonding, we emphasize best practices in version control. Learn Git to manage code efficiently, collaborate with teams, and streamline your software development workflow.',
-    image: git,
-    imageFirst: false,
-  },
-];
