@@ -45,3 +45,12 @@ body {
     transform: translateX(0);
   }
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by half the width of the duplicated logos */
+  }
+}

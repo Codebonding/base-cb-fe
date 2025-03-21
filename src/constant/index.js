@@ -14,6 +14,7 @@ import { LiaInstagram } from 'react-icons/lia';
 import Frontend from '../Component/Home/Frontend';
 import Backend from '../Component/Home/Backend';
 import Dev from '../Component/Home/Dev';
+import LogoCarousel from '../Component/Client/LogoCarousel';
 
 export const contactInfo = {
   title: 'Contact Us',
@@ -23,8 +24,7 @@ export const contactInfo = {
 
 export const contactMethods = [
   {
-    id: 'email',
-    title: 'Email',
+    id: 'email', 
     icon: <FaEnvelope className="text-2xl" />,
     bgColor: 'bg-blue-600',
     link: 'mailto:codebonding@gmail.com',
@@ -74,6 +74,10 @@ export const sections = [
   {
     id: 'faq',
     component: <FAQ />,
+  },
+  {
+    id: 'client',
+    component: <LogoCarousel />,
   },
 ];
 
