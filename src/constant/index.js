@@ -3,7 +3,6 @@ import why from '../assest/image/why.jpg';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import Home from '../Component/Home/Home';
 import About from '../Component/About/About';
-import Contact from '../Component/Contact/Contact';
 import FAQ from '../Component/FAQ/Faq';
 import { FaTwitter, FaLinkedin } from 'react-icons/fa';
 import master from '../assest/image/matser.jpg';
@@ -71,10 +70,6 @@ export const sections = [
   {
     id: 'about',
     component: <About />,
-  },
-  {
-    id: 'contact',
-    component: <Contact />,
   },
   {
     id: 'faq',
