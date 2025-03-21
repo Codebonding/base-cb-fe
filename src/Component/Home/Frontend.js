@@ -6,22 +6,24 @@ import img4 from "../../assest/image/react.webp";
 import img5 from "../../assest/image/javascript (2).jpg";
 import img6 from "../../assest/image/css (2).jpg";
 
-const images = [img1, img2, img3, img4, img5, img6];
+const images = [
+  { src: img1, name: "Angular" },
+  { src: img2, name: "HTML5" },
+  { src: img3, name: "Next.js" },
+  { src: img4, name: "React" },
+  { src: img5, name: "JavaScript" },
+  { src: img6, name: "CSS3" },
+];
 
-// Duplicate images to create a seamless loop
-const extendedImages = [img4, ...images, img1];
+// Extend images for seamless looping
+const extendedImages = [{ src: img4, name: "React" }, ...images, { src: img1, name: "Angular" }];
 
 const Frontend = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        if (prevIndex === extendedImages.length - 1) {
-          return 1;
-        }
-        return prevIndex + 1;
-      });
+      setCurrentIndex((prevIndex) => (prevIndex === extendedImages.length - 1 ? 1 : prevIndex + 1));
     }, 3000);
 
     return () => clearInterval(interval);
@@ -31,31 +33,27 @@ const Frontend = () => {
     <div className="relative w-full h-screen overflow-hidden bg-[#0F172A] flex items-center justify-center">
       {/* Header with sleek design */}
       <h1 className="text-5xl font-bold text-center mb-8 text-white drop-shadow-lg">
-        Build Strong {" "}
-        <span className="text-[#015D6C]">Foundations in Tech </span>
+        Build Strong <span className="text-[#015D6C]">Foundations in Tech</span>
       </h1>
 
       {/* Image Carousel */}
       <div
         className="flex transition-transform duration-[2000ms] ease-in-out gap-4 px-4"
-        style={{
-          transform: `translateX(-${(currentIndex - 1) * (100 / images.length)}%)`,
-          width: `${extendedImages.length * 100}%`,
-        }}
+        style={{ transform: `translateX(-${(currentIndex - 1) * (100 / images.length)}%)`, width: `${extendedImages.length * 100}%` }}
       >
-        {extendedImages.map((img, index) => (
+        {extendedImages.map((imgObj, index) => (
           <div
             key={index}
             className="w-1/2 h-[50vh] flex-shrink-0 transform transition-transform duration-500 hover:scale-105 relative group overflow-hidden rounded-xl shadow-lg"
           >
             <img
-              src={img}
-              alt={`Slide ${index + 1}`}
+              src={imgObj.src}
+              alt={imgObj.name}
               className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-75 group-hover:blur-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="text-white text-3xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-[#015D6C] to-[#013D4C] shadow-md">
-                Image {index}
+                {imgObj.name}
               </div>
             </div>
           </div>
@@ -69,9 +67,7 @@ const Frontend = () => {
             key={index}
             onClick={() => setCurrentIndex(index + 1)}
             className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              index === currentIndex - 1
-                ? "bg-[#015D6C] scale-125"
-                : "bg-gray-400 hover:scale-110 hover:bg-[#015D6C]"
+              index === currentIndex - 1 ? "bg-[#015D6C] scale-125" : "bg-gray-400 hover:scale-110 hover:bg-[#015D6C]"
             }`}
           ></button>
         ))}
@@ -86,9 +82,7 @@ const Frontend = () => {
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              animation: `float ${Math.random() * 10 + 5}s infinite ${
-                Math.random() * 2
-              }s ease-in-out`,
+              animation: `float ${Math.random() * 10 + 5}s infinite ${Math.random() * 2}s ease-in-out`,
             }}
           ></div>
         ))}

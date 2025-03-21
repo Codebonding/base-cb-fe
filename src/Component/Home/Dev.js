@@ -4,10 +4,15 @@ import img2 from "../../assest/image/IONOS.webp";
 import img3 from "../../assest/image/aws.jpg";
 import img4 from "../../assest/image/linux.png";
 
-const images = [img1, img2, img3, img4];
+const images = [
+  { src: img1, name: "Azure DevOps" },
+  { src: img2, name: "IONOS" },
+  { src: img3, name: "AWS" },
+  { src: img4, name: "Linux" },
+];
 
 // Duplicate images to create a seamless loop
-const extendedImages = [img4, ...images, img1];
+const extendedImages = [{ src: img4, name: "Linux" }, ...images, { src: img1, name: "Azure DevOps" }];
 
 const Dev = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -41,19 +46,19 @@ const Dev = () => {
           width: `${extendedImages.length * 100}%`,
         }}
       >
-        {extendedImages.map((img, index) => (
+        {extendedImages.map((item, index) => (
           <div
             key={index}
             className="w-1/2 h-[50vh] flex-shrink-0 transform transition-transform duration-500 hover:scale-105 relative group overflow-hidden rounded-xl shadow-lg"
           >
             <img
-              src={img}
-              alt={`Slide ${index + 1}`}
+              src={item.src}
+              alt={item.name}
               className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-75 group-hover:blur-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="text-white text-3xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-[#015D6C] to-[#013D4C] shadow-md">
-                Image {index}
+                {item.name}
               </div>
             </div>
           </div>

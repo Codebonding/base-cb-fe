@@ -5,6 +5,7 @@ import img3 from "../../assest/image/java.png";
 import img4 from "../../assest/image/python.jpg";
 
 const images = [img1, img2, img3, img4];
+const imageNames = ["Python","C Language", "C++", "Java"];
 
 // Duplicate images to create a seamless loop
 const extendedImages = [img4, ...images, img1];
@@ -53,7 +54,7 @@ const Home = () => {
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <div className="text-white text-3xl font-bold px-8 py-4 rounded-xl bg-gradient-to-r from-[#015D6C] to-[#013D4C] shadow-md">
-                Image {index}
+                {imageNames[index % imageNames.length]}
               </div>
             </div>
           </div>
