@@ -8,7 +8,7 @@ const logoImages = [logo1, logo2, logo3, logo4];
 
 const LogoCarousel = () => {
   // Duplicate the logos for infinite scrolling effect
-  const duplicatedLogos = [...logoImages, ...logoImages];
+  const duplicatedLogos = [...logoImages, ...logoImages,...logoImages];
 
   return (
     <div

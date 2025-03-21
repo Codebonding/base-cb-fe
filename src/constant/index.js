@@ -109,7 +109,7 @@ export const sections_1 = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'faq', label: 'FAQ' },
-  { id: 'contact', label: 'Contact' }
+  // { id: 'contact', label: 'Contact' }
 ];
 
 export const DisclaimerContent = [
