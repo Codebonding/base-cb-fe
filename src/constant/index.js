@@ -13,6 +13,7 @@ import git from '../assest/image/git.png';
 import { FaInstagram } from 'react-icons/fa6';
 import { LiaInstagram } from 'react-icons/lia';
 import Frontend from '../Component/Home/Frontend';
+import Backend from '../Component/Home/Backend';
 
 
 export const aboutInfo = {
@@ -92,6 +93,10 @@ export const sections = [
   {
     id: 'frontend',
     component: <Frontend />,
+  },
+   {
+    id: 'backend',
+    component: <Backend />,
   },
   {
     id: 'about',
