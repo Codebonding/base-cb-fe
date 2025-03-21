@@ -118,10 +118,14 @@ const Header = () => {
         ) : (
           <>
             <div className="flex items-center space-x-3">
-  <div className="bg-white p-3 rounded-full shadow-md">
-    <img src={logo} alt="Logo" className="w-30 h-12 object-contain" />
-  </div>
-</div>
+              <div className="bg-white p-3 rounded-full shadow-md">
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="w-30 h-12 object-contain"
+                />
+              </div>
+            </div>
             <nav className="hidden md:flex space-x-10 text-lg font-medium">
               <ul className="flex space-x-10 text-white">
                 {sections_1.map(({ id, label }) => (
@@ -200,7 +204,7 @@ const Header = () => {
               </li>
             ))}
             <li>
-              <button
+              {/* <button
                 onClick={() => {
                   navigate("/Candiate");
                   setIsMenuOpen(false);
@@ -208,7 +212,7 @@ const Header = () => {
                 className="w-full px-6 py-2 text-[#0F5C6B] bg-white rounded-lg hover:bg-[#14B4A6] hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
               >
                 Sign Up
-              </button>
+              </button> */}
             </li>
             <li>
               <button
