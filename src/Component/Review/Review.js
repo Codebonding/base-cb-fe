@@ -16,24 +16,39 @@ const reviews = [
 ];
 
 const ReviewCard = ({ title, content }) => (
-  <div className="flex flex-col items-center justify-center bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
-    <h3 className="text-2xl font-bold text-[#1E353D] mb-4">{title}</h3>
-    <p className="text-gray-700 text-lg leading-relaxed text-center">"{content}"</p>
+  <div className="flex flex-col items-center justify-center bg-[#2DB5A6] text-white p-8 rounded-2xl shadow-xl max-w-2xl mx-auto h-full">
+    <h3 className="text-2xl font-bold mb-4">{title}</h3>
+    <p className="text-lg leading-relaxed text-center">"{content}"</p>
   </div>
 );
 
 const InternReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState('right'); // Track slide direction
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+      setDirection('right');
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % reviews.length);
+      }, 500); // Delay before moving to the next card
     }, 5000);
     return () => clearInterval(interval);
   }, []);
 
-  const nextReview = () => setCurrentIndex((prev) => (prev + 1) % reviews.length);
-  const prevReview = () => setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  const nextReview = () => {
+    setDirection('right');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    }, 500); // Delay before moving to the next card
+  };
+
+  const prevReview = () => {
+    setDirection('left');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+    }, 500); // Delay before moving to the previous card
+  };
 
   return (
     <section className="w-full min-h-[60vh] bg-[#1E353D] text-center py-16 relative overflow-hidden">
@@ -41,19 +56,34 @@ const InternReviews = () => {
       <div className="relative z-10">
         <h2 className="text-4xl font-bold text-white mb-4">⭐ What Our Interns Say</h2>
         <h3 className="text-2xl font-semibold text-[#2DB5A6] mb-8">Real Voices. Real Experiences.</h3>
-        <div className="relative w-full flex items-center justify-center px-8">
+        <div className="relative w-full flex items-center justify-center px-8 overflow-hidden">
           <button
             onClick={prevReview}
-            className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#2DB5A6] text-white p-3 rounded-full shadow-md hover:bg-[#185D6A] transition-colors"
+            className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-[#2DB5A6] text-white p-3 rounded-full shadow-md hover:bg-[#185D6A] transition-colors z-20"
           >
-            ⬅️
+            {'<'}
           </button>
-          <ReviewCard {...reviews[currentIndex]} />
+          <div className="w-full max-w-2xl overflow-hidden relative h-96">
+            {reviews.map((review, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
+                  index === currentIndex
+                    ? 'translate-x-0'
+                    : direction === 'right'
+                    ? 'translate-x-full'
+                    : '-translate-x-full'
+                }`}
+              >
+                <ReviewCard {...review} />
+              </div>
+            ))}
+          </div>
           <button
             onClick={nextReview}
-            className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-[#2DB5A6] text-white p-3 rounded-full shadow-md hover:bg-[#185D6A] transition-colors"
+            className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-[#2DB5A6] text-white p-3 rounded-full shadow-md hover:bg-[#185D6A] transition-colors z-20"
           >
-            ➡️
+            {'>'}
           </button>
         </div>
       </div>
