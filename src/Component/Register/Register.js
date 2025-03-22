@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useCreateUserMutation } from "../../features/api/userApiSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import { motion } from "framer-motion";
+import { FaSpinner } from "react-icons/fa";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -26,8 +28,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const Register = () => {
-  const [createUser, { isLoading, isSuccess, isError, error }] =
-    useCreateUserMutation();
+  const [createUser, { isLoading }] = useCreateUserMutation();
 
   const {
     register,
@@ -47,24 +48,19 @@ const Register = () => {
     { label: "Address", name: "address", type: "textarea", placeholder: "Enter your full address" },
     { label: "District", name: "district", type: "text", placeholder: "Enter your district" },
     { label: "State", name: "state", type: "text", placeholder: "Enter your state" },
-    { label: "Pincode", name: "pinCode", type: "number", placeholder: "Enter your pinCode" }
+    { label: "Pincode", name: "pinCode", type: "number", placeholder: "Enter your pinCode" },
   ];
 
   const onSubmit = async (data) => {
     try {
-      const response = await createUser(data).unwrap();
-      console.log("Response:", response);
-
+      await createUser(data).unwrap();
       toast.success("Registration Successful! Welcome to CodeBonding!", {
         position: "top-center",
         autoClose: 5000,
       });
-
       reset();
     } catch (err) {
-      console.error("Error:", err.data.error);
-
-      toast.error(`Registration failed. ${err.data.error}`, {
+      toast.error(`Registration failed. ${err.data?.error || "Please try again"}`, {
         position: "top-center",
         autoClose: 5000,
       });
@@ -72,47 +68,58 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-24 min-h-screen bg-gray-200">
-      <div className="w-full max-w-3xl bg-white rounded-lg shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-center">
-          <h2 className="text-3xl font-bold text-white">Registration Form</h2>
-          <p className="text-white mt-2">Join CodeBonding IT Training Today!</p>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-[#1E353D] to-[#185D6A] p-4">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-4xl bg-white rounded-3xl shadow-xl overflow-hidden"
+      >
+        <div className="bg-[#185D6A] p-8 text-center">
+          <h2 className="text-5xl font-bold text-white tracking-wider">Join CodeBonding</h2>
+          <p className="text-white mt-2 text-lg font-light">Kickstart your IT career with us!</p>
         </div>
         <form className="p-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
-          {fields.map(({ label, name, type, placeholder }) => (
-            <div key={name}>
-              <label className="block text-gray-700 font-medium mb-1">{label}</label>
-              {type === "textarea" ? (
-                <textarea
-                  rows="3"
-                  {...register(name)}
-                  placeholder={placeholder}
-                  className="w-full px-4 py-3 border rounded-md shadow-sm focus:ring focus:ring-blue-400 focus:outline-none"
-                />
-              ) : (
-                <input
-                  type={type}
-                  {...register(name)}
-                  placeholder={placeholder}
-                  className="w-full px-4 py-3 border rounded-md shadow-sm focus:ring focus:ring-blue-400 focus:outline-none"
-                />
-              )}
-              {errors[name] && (
-                <p className="text-red-500 text-sm">{errors[name].message}</p>
-              )}
-            </div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {fields.map(({ label, name, type, placeholder }) => (
+              <motion.div 
+                key={name} 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <label className="block text-[#1E353D] font-semibold mb-2">{label}</label>
+                {type === "textarea" ? (
+                  <textarea
+                    rows="3"
+                    {...register(name)}
+                    placeholder={placeholder}
+                    className="w-full px-4 py-3 border border-[#185D6A] rounded-lg shadow-sm focus:ring-2 focus:ring-[#185D6A] focus:outline-none transition-all"
+                  />
+                ) : (
+                  <input
+                    type={type}
+                    {...register(name)}
+                    placeholder={placeholder}
+                    className="w-full px-4 py-3 border border-[#185D6A] rounded-lg shadow-sm focus:ring-2 focus:ring-[#185D6A] focus:outline-none transition-all"
+                  />
+                )}
+                {errors[name] && <p className="text-red-500 text-sm mt-1">{errors[name].message}</p>}
+              </motion.div>
+            ))}
+          </div>
           <div className="text-center">
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
               type="submit"
-              className="bg-blue-500 text-white px-3 py-2 rounded-md shadow-lg text-[18px]"
+              className="bg-[#185D6A] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#1E353D] transition-all text-lg font-semibold flex items-center justify-center gap-2"
               disabled={isLoading}
             >
-              {isLoading ? "Submitting..." : "Submit"}
-            </button>
+              {isLoading ? <FaSpinner className="animate-spin" /> : "Register Now"}
+            </motion.button>
           </div>
         </form>
-      </div>
+      </motion.div>
       <ToastContainer />
     </div>
   );
