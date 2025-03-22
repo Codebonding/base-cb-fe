@@ -15,6 +15,7 @@ import Frontend from '../Component/Home/Frontend';
 import Backend from '../Component/Home/Backend';
 import Dev from '../Component/Home/Dev';
 import LogoCarousel from '../Component/Client/LogoCarousel';
+import InternReviews from '../Component/Review/Review';
 
 export const contactInfo = {
   title: 'Contact Us',
@@ -72,13 +73,17 @@ export const sections = [
     component: <About />,
   },
   {
+    id: 'review',
+    component: <InternReviews />,
+  },
+  {
     id: 'faq',
     component: <FAQ />,
   },
   {
     id: 'client',
     component: <LogoCarousel />,
-  },
+  }
 ];
 
 
