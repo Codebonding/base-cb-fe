@@ -32,7 +32,7 @@ const Content = () => {
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8">
                         Empowering product-based innovations for the future with CodeBonding.
                     </p>
-                    <button 
+                    {/* <button 
                         className="bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-lg transition-all transform"
                         style={{
                             transition: 'transform 0.3s ease-in-out', // Hover effect
@@ -42,7 +42,7 @@ const Content = () => {
                         onClick={() => navigate('/register')}
                     >
                         Join Now
-                    </button>
+                    </button> */}
                 </div>
             </div>
 
