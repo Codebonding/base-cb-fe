@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaInstagram } from 'react-icons/fa'; // Import Instagram icon
 import { footerData } from '../../constant'; // Import footerData
 
 const Footer = () => {

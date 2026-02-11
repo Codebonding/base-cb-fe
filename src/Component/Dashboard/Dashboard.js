@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { FaQuestionCircle, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
+import { FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
 import McqTest from "../MCQ/MCQTest";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [activeComponent, setActiveComponent] = useState("welcome");
+  const [activeComponent] = useState("welcome");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleLogout = () => {
