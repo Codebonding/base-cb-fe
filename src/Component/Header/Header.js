@@ -152,12 +152,12 @@ const Header = () => {
               </ul>
             </nav>
             <div className="hidden md:flex space-x-4">
-              {/* <button
+              <button
                 onClick={() => navigate("/login")}
                 className="px-6 py-2 text-white bg-[#14B4A6] rounded-lg hover:bg-[#0F5C6B] hover:border-2 hover:border-[#14B4A6] transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
               >
                 Login
-              </button> */}
+              </button>
             </div>
             <div className="md:hidden">
               <button
@@ -215,7 +215,7 @@ const Header = () => {
               </button> */}
             </li>
             <li>
-              {/* <button
+              <button
                 onClick={() => {
                   navigate("/login");
                   setIsMenuOpen(false);
@@ -223,7 +223,7 @@ const Header = () => {
                 className="w-full px-6 py-2 text-white bg-transparent border-2 border-white rounded-lg hover:bg-[#14B4A6] hover:border-[#14B4A6] transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg"
               >
                 Login
-              </button> */}
+              </button>
             </li>
           </ul>
         </div>

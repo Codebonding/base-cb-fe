@@ -1,10 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import buildGrowBg from '../../assest/image/bg.png';
 import { sections } from '../../constant';
 
 const Content = () => {
-    const navigate = useNavigate();
 
     return (
         <main className="flex-1">
