@@ -3,8 +3,9 @@ import logo1 from '../../assest/image/logothink.png';
 import logo2 from '../../assest/image/logoItech.png';
 import logo3 from '../../assest/image/logoms.png';
 import logo4 from '../../assest/image/logonrn.png';
+import logo5 from '../../assest/image/merzol.jpg';
 
-const logoImages = [logo1, logo2, logo3, logo4];
+const logoImages = [logo1, logo2, logo3, logo4, logo5];
 
 const LogoCarousel = () => {
   // Duplicate the logos for infinite scrolling effect
